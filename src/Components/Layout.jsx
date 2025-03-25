@@ -3,15 +3,26 @@ import Left from "./Left";
 import Right from "./Right";
 import Reducer2 from "./Reducer2";
 import Navbar from "./Navbar";
-
+import { useEffect } from "react";
 const Layout = ()=>{
-const inputUser = prompt('Enter the total Budget')
+
+
+
+  const [Budget, setBudget] = useState(0); // Default to 0
+
+  useEffect(() => {
+    const savedBudget = localStorage.getItem("budget"); // Retrieve budget
+    if (savedBudget) {
+      setBudget(Number(savedBudget)); // Ensure it's a number
+    }
+  }, []);
+
+  const [Expense,setExpense]=useState(0);
+
   const [Val,setVal] = useState('');
     const [Cat,setCat]=useState('');
    
-    const [Budget,setBudget]=useState(inputUser);
-    const [Expense,setExpense]=useState(0);
-
+    
 
 
    const [expense , dispatch] = useReducer(Reducer2,[]);

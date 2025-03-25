@@ -8,7 +8,7 @@ const SignIn = ()=>{
     const navigate = useNavigate();
      const [Email,setEmail]=useState("");
        const [Pass,setPass]=useState("");
-
+        const [Userinput,setUserinput]=useState("");
 
 // will go to signup page
   const handleSignup=()=>{
@@ -24,6 +24,7 @@ const SignIn = ()=>{
   }
     const handleSign=()=>{
      navigate('/Layout')
+     localStorage.setItem("budget",Userinput)
     }
     const a =()=>{
       login();
@@ -40,11 +41,21 @@ const SignIn = ()=>{
             value={Email}
             onChange={(e)=>setEmail(e.target.value)}/>
             <h1>Password:</h1>
+
+
+
             <input 
             type="password" 
             placeholder="Enter your Password"
             value={Pass}
             onChange={(e)=>setPass(e.target.value)} />
+
+
+
+            <input type="number" 
+            placeholder="Enter Budget" 
+            value={Userinput}
+            onChange={(e)=>setUserinput(e.target.value)}/>
             <button onClick={a} className="bg-gray-600 rounded-2xl mt-5 text-white px-6 py-4 active:scale-90">Sign In</button>
             <button onClick={handleSignup} className="bg-red-400 text-white">Signup</button>
            </div>

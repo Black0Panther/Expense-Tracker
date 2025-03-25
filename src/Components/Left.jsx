@@ -1,20 +1,27 @@
 import { useState } from "react"
 import Card from "./Card"
-const Left=({expense, Val , Cat,setVal,setCat , Budget,Expense})=>{
-  
+import AddNew from "./AddNew"
+const Left=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget,Expense,expense})=>{
+  const [Check,setCheck] = useState(false);
+const check1 = ()=>{
+       if(Val > Budget){
+        setCheck(!Check)
+       }
+}
+
     return <>
     <div className="w-full md:w-3/4">
      <div className=" flex justify-between px-8 py-4">
-        <div className="flex flex-col gap-2.5">
-            <h2 className="text-3xl font-bold">Total Budget</h2>
+        <div className="items-center border-none md:border border-gray-400 px-6 py-2 flex flex-col gap-2.5 ">
+            <h2 className="text-2xl font-bold  md:text-3xl">Budget</h2>
             <p className="text-xl font-semibold">Rs.{Budget}</p>
         </div>
-        <div className="flex flex-col gap-2.5">
-            <h2 className="text-3xl font-bold">Spend</h2>
-            <p className="text-xl font-semibold">{Expense}</p>
+        <div className=" border-none md:border border-gray-400 px-6 py-2 md:flex flex-col gap-2.5 items-center"> 
+            <h2 className="text-2xl font-bold md:text-3xl ">Spend</h2>
+            <p style={{background: Check ? "red" : "transparent"}} className="text-xl font-semibold">{Expense}</p>
         </div>
      </div>
-
+  
      {/* Table */}
      <div className="mt-5">
    

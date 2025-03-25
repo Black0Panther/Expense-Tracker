@@ -15,7 +15,8 @@ const Right=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget
        dispatch({type:"ADD" , payload:Val , payload2:Cat})
        if(Budget-parseInt(Val) <= 0){
         alert("Attention: You have exceeded the monthly Budget !!!")
-        return;
+        setBudget(0)
+        
        }
        setBudget(Budget-parseInt(Val))
        setExpense(Expense+parseInt(Val))

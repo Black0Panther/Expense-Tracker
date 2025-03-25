@@ -2,8 +2,6 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Try from './Components/Try'
-import Prac from './Components/Prac'
 import Navbar from './Components/Navbar'
 import Layout from './Components/Layout'
 import Chartuse from './Components/Chartuse'
@@ -20,6 +18,7 @@ function App() {
     <Route path='/Layout' element={<Layout/>}> </Route>
     <Route path='/SignUp' element={<SignUp/>}></Route>
     <Route path='SignIn' element={<SignIn/>}></Route>
+    <Route path='/SignIn' element={<Navbar/>}></Route>
    </Routes>
     </>
   )
