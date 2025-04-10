@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Card from "./Card"
 import AddNew from "./AddNew"
-const Left=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget,Expense,expense})=>{
+import { BudgetContext } from "../Store/TotalBudget"
+const Left=({ Budget,Expense,expense})=>{
+    const {Val} = useContext(BudgetContext)
   const [Check,setCheck] = useState(false);
 const check1 = ()=>{
        if(Val > Budget){

@@ -1,10 +1,12 @@
-import { useReducer, useState } from "react"
+import { useContext, useReducer, useState } from "react"
 import Reducer2 from "./Reducer2";
 import AddNew from "./AddNew";
 import Chartuse from "./Chartuse";
-const Right=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget,Expense,expense})=>{
+import Piechart from "./Piechart";
+import { BudgetContext } from "../Store/TotalBudget";
+const Right=({dispatch, setBudget,setExpense , Budget,Expense,expense})=>{
    
-    
+    const {Val,Cat,setCat,setVal,Cat2,setCat2} = useContext(BudgetContext)
     const handleSubmit = ()=>{
        console.log(Val)
        console.log(Cat)
@@ -12,7 +14,7 @@ const Right=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget
         alert(" sry ")
         return;
        }
-       dispatch({type:"ADD" , payload:Val , payload2:Cat})
+       dispatch({type:"ADD" , payload:Val , payload2:Cat , payload3:Cat2})
        if(Budget-parseInt(Val) <= 0){
         alert("Attention: You have exceeded the monthly Budget !!!")
         setBudget(0)
@@ -26,10 +28,7 @@ const Right=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget
     return <>
     <div className="w-full md:w-1/4">
     <div className="">
-     <AddNew handleSubmit={handleSubmit}  Val={Val} 
-       setVal={setVal} 
-       Cat={Cat} 
-       setCat={setCat} 
+     <AddNew handleSubmit={handleSubmit}  
        dispatch={dispatch}
        setBudget={setBudget}
        setExpense={setExpense}
@@ -40,6 +39,9 @@ const Right=({dispatch, Val , Cat,setVal ,setCat , setBudget,setExpense , Budget
 
     <div className=" w-full h-72">
       <Chartuse expense={expense}></Chartuse>
+    </div>
+    <div>
+      <Piechart expense={expense}></Piechart>
     </div>
     </div>
     </>
