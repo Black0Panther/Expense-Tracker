@@ -13,7 +13,7 @@ const AddNew=({handleSubmit,dispatch ,setBudget,setExpense , Budget,Expense})=>{
         onChange={(e)=>setVal(e.target.value)}
         type="number" 
         placeholder="Enter the value"/>
-        <h1 className="text-lg font-semibold">Catcription</h1>
+        <h1 className="text-lg font-semibold">Description</h1>
         <input className="border border-gray-400 py-1"
         type="text"
         value={Cat}

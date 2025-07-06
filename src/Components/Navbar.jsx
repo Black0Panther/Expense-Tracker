@@ -12,7 +12,7 @@ const Navbar = ()=>{
         <div className="text-2xl font-bold">Expense Tracker</div>
         <div className="flex gap-4 items-center">
         <ul className="hidden md:flex gap-4 ">
-        <button onClick={handleLogout} className="px-2 bg-red-500 rounded-xl">Logout</button>
+        <button onClick={handleLogout} className="px-4 bg-red-500 rounded-xl text-white">Logout</button>
             <li className="font-semibold cursor-pointer">Dashboard</li>
             <li className="font-semibold cursor-pointer">Expenses</li>
             <li className="font-semibold cursor-pointer">Reports</li>

@@ -28,7 +28,7 @@ const SignUp = ()=>{
     }
     return <>
     <div className=" w-full h-screen flex justify-center items-center">
-          <div className="bg-gray-400 w-76 md:w-96 p-16 shadow-2xl shadow-lime-300">
+          <div className="bg-white w-76 md:w-96 p-16 shadow-2xl shadow-2xl shadow-black">
             <h1 className="flex text-2xl font-bold mb-6 justify-center ">Sign Up</h1>
            <div className=" flex flex-col gap-3">
             <h1>Email:</h1>
@@ -43,7 +43,7 @@ const SignUp = ()=>{
             placeholder="Enter your Password"
             value={Pass}
             onChange={(e)=>setPass(e.target.value)} />
-            <button onClick={ a} className="bg-gray-600 rounded-2xl mt-5 text-white px-6 py-4 active:scale-90">Sign Up</button>
+            <button onClick={ a} className="bg-blue-500 rounded-2xl mt-5 text-white px-6 py-4 active:scale-90">Sign Up</button>
            </div>
           </div>
     </div>
